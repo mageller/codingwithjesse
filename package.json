@@ -1,0 +1,27 @@
+{
+  "name": "codingwithjesse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mageller/codingwithjesse.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": "true",
+  "bugs": {
+    "url": "https://github.com/mageller/codingwithjesse/issues"
+  },
+  "homepage": "https://github.com/mageller/codingwithjesse#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
