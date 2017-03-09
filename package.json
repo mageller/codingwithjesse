@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/mageller/codingwithjesse#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "express": "^4.15.2",
     "mocha": "^3.2.0"
   }
