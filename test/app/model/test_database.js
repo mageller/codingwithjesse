@@ -3,6 +3,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 
+
 var database = require('../../../app/model/database');
 var config = require('../../config');
 
