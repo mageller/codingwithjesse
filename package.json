@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --recursive"
+    "test": "./node_modules/.bin/mocha --recursive",
+    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
     "chai-as-promised": "^6.0.0",
     "express": "^4.15.2",
     "mocha": "^3.2.0",
-    "mysql2": "^1.2.0"
+    "mysql2": "^1.2.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   }
 }
