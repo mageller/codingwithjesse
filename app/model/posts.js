@@ -2,19 +2,20 @@ var database = require('./database');
 
 exports.createTable = function() {
   return database.query(`
-    CREATE TABLE posts (
+    CREATE TABLE IF NOT EXISTS posts (
       id int NOT NULL AUTO_INCREMENT,
       title varchar(255) NOT NULL,
       body TEXT NOT NULL,
       slug varchar(255) NOT NULL,
+      posted_at TIMESTAMP DEFAULT NOW(),
       PRIMARY KEY(id),
       INDEX (slug)
     )
   `);
 };
 
-exports.dropTable = function() {
-  return database.query("DROP TABLE IF EXISTS posts");
+exports.deleteAll = function() {
+  return database.query("TRUNCATE posts");
 };
 
 exports.add = function(params) {
@@ -23,3 +24,30 @@ exports.add = function(params) {
       return result.insertId;
     });
 };
+
+exports.remove = function(id) {
+  return database.query("DELETE FROM posts WHERE ?", {
+    id: id
+  }).then(function(result) {
+    return result.affectedRows;
+  });
+};
+
+exports.getAll = function() {
+  return database.query("SELECT * FROM posts ORDER BY posted_at DESC")
+};
+
+exports.getBySlug = function(slug) {
+  return database.query("SELECT * FROM posts WHERE slug = ?", slug)
+  .then(function(results) {
+    return results[0];
+  });
+};
+
+exports.update = function(id, params) {
+  return database.query(`
+    UPDATE posts
+    SET ?
+    WHERE id = ?
+  `, [params, id]);
+}

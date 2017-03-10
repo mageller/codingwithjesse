@@ -5,9 +5,9 @@ var expect = chai.expect;
 
 
 var database = require('../../../app/model/database');
-var config = require('../../config');
+var config = require('../../../config');
 
-database.init(config.database);
+database.init(config.test.database);
 
 describe('database', function() {
   it('should let me run a query without params', function() {
